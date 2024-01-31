@@ -1,0 +1,69 @@
+
+open cmd
+pip install virtualenv
+
+
+create folder structure
+
+projects -->bacthname -->django-->projectmanagement
+open this folder
+
+select path --> type cmd 
+
+cmd opened !!!
+
+virtualenv venv  | python -m virtualenv venv
+
+projectmanagement
+	venv
+
+open with code
+
+
+enable virtulenv
+	go to terminal --> new terminal [change to cmd from powershell...]
+
+
+venv\Scripts\activate
+
+
+pip install django
+
+to creation project:
+django-admin startproject pms
+
+cd foldername[]
+cd pms --> manage.py
+
+DIR
+
+python manage.py runserver
+
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+userName root
+password root
+email root@gmail.com
+
+waring bypass [Y]
+
+
+module:
+
+
+create application djago-admin startapp blog
+
+create urls.py --->
+
+register this url to main url of project
+
+app --> views --create func accordingly...
+
+call function from urls.py
+
+create templates folder [manage.py]
+reg in setting.py
+
