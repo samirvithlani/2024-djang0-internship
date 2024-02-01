@@ -67,3 +67,20 @@ call function from urls.py
 create templates folder [manage.py]
 reg in setting.py
 
+
+
+Models --> ORM --> Object Relational Mapping
+name =
+duration =
+isActive = True/False
+ratings = 1-5
+created_at = date
+updated_at = date
+
+create table model(title varchar(200),duration int,isActive boolean,)
+
+id name type price qty
+1000.... rows
+ratings
+
+id name type price qty ratings
