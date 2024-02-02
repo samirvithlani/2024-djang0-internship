@@ -84,3 +84,6 @@ id name type price qty
 ratings
 
 id name type price qty ratings
+
+
+create table student(id int,name varchar,courseId int,foreign key(courseId) references course(id))

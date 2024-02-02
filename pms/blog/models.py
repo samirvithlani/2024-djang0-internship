@@ -36,4 +36,84 @@ class Books(models.Model):
     
     def __str__(self):
         return self.name    
+ 
+
+class Director(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField()
+    exp = models.IntegerField()
+    
+    class Meta:
+        db_table = "directors"
+    def __str__(self):
+        return self.name
+
+
+class Movie(Director):
+    title = models.CharField(max_length=100)
+    duration = models.IntegerField()
+    isActive = models.BooleanField(default=True)
+    ratings = models.FloatField()
+    
+    class Meta:
+        db_table = "movies"
+        
+    def __str__(self):
+        return self.title
+
+
+class Course(models.Model):
+    name = models.CharField(max_length=100)
+    fees = models.IntegerField()
+    duration = models.IntegerField()
+    
+    class Meta:
+        db_table = "courses"
+        
+    def __str__(self):
+        return self.name
+
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField()
+    course  = models.ForeignKey(Course,on_delete=models.CASCADE) #course_id           
+    
+    class Meta:
+        db_table = "students"
+    def __str__(self):
+        return self.name
+
+
+#many to many relationship        
+
+class Leaves(models.Model):
+    name = models.CharField(max_length=100)
+    duration = models.IntegerField()
+    
+    class Meta:
+        db_table = "leaves"
+
+    def __str__(self):
+        return self.name
+
+
+class Permissions(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    
+    class Meta:
+        db_table = "permissions"
+    def __str__(self):
+        return self.name        
+
+class Resources(models.Model):
+    name= models.CharField(max_length=100)
+    leaves = models.ManyToManyField(Leaves)
+    permissions = models.ManyToManyField(Permissions,null=True,blank=True)
+    
+    class Meta:
+        db_table = "resources"
+    def __str__(self):
+        return self.name    
+    
             
