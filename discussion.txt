@@ -87,3 +87,36 @@ id name type price qty ratings
 
 
 create table student(id int,name varchar,courseId int,foreign key(courseId) references course(id))
+
+
+application crattion  
+employee
+django-admin startapp employee
+
+urls.py create...
+models.py ---> model named employee
+makemigrations
+migrate
+
+form.py creations...
+
+class EmployeeForm...
+
+
+views.py
+
+template/employee folder..
+employee/ employee_create.html
+
+<form method ="POST">
+	csrf token
+{{form.as_p}}
+</form>
+
+
+
+regiter app urls.py to project urls.py
+
+
+
+
