@@ -1,0 +1,35 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+
+<h1>Employee List</h1>
+
+{% comment %} {% for i in employees %} {{i.id}} - {{i.name}} -{{i.age}} {%
+endfor %} {% endcomment %}
+
+<table class ="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Salary</th>
+      <th>Password</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in employees %}
+    <tr>
+      <td>{{i.id}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.age}}</td>
+      <td>{{i.salary}}</td>
+      <td>{{i.password}}</td>
+    </tr>
+
+    {% endfor %}
+  </tbody>
+</table>

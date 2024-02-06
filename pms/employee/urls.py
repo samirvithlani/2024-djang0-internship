@@ -4,6 +4,7 @@ from .import views
 
 urlpatterns = [
     #localhost:8000/employee/create
-    path("create/",views.create_employee)
+    path("create/",views.create_employee),
+    path("list/",views.getall_employee)
 ]
    
