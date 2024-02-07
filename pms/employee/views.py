@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import EmployeeForm
 from .models import Employee
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 #function based views
@@ -38,3 +39,25 @@ def delete_employee(request,id):
     #print(employee)
     
     return render(request,"employee/employee_list.html",context)
+
+
+def detail_employee(request,id):
+    context = {} #empty dictionary
+    employee = Employee.objects.get(id=id)
+    context["employee"] = employee
+    return render(request,"employee/employee_detail.html",context)
+
+def update_employee(request,id):
+    context = {} #empty dictionary
+    employee = Employee.objects.get(id=id) #old record select * from employee where id = 2
+    form = EmployeeForm(request.POST or None, instance = employee)  
+    
+    if form.is_valid():
+        form.save()  
+        return HttpResponseRedirect("/employee/list/")
+    
+    context["form"] = form
+    
+    return render(request,"employee/employee_update.html",context)
+    
+    

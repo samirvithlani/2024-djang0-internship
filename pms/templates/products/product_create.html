@@ -1,0 +1,32 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+{% comment %}
+<form method="POST">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+  <input type="submit" value="Submit" />
+</form>
+{% endcomment %} {% comment %}
+ {% load crispy_forms_tags %}
+
+<form method="POST">
+  {% csrf_token %} {{ form|crispy }}
+  <input type="submit" value="Submit" />
+</form>
+{% endcomment %} {% load crispy_forms_tags %}
+<form method="POST">
+  {% csrf_token %}
+  <div class="form-group">{{form.name | as_crispy_field}}</div>
+  <div class="form-group">{{form.price | as_crispy_field}}</div>
+  <div class="form-group">{{form.qty | as_crispy_field}}</div>
+  <div class="form-group">{{form.cat | as_crispy_field}}</div>
+  <div class="form-group">{{form.status | as_crispy_field}}</div>
+  <div class="form-group">{{form.discount | as_crispy_field}}</div>
+  <input type="submit" value="Submit" class="btn btn-primary" />
+</form>
