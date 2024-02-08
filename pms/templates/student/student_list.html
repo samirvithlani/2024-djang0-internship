@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Student Name</th>
+          <th>Student Email</th>
+          <th>Student Age</th>
+          <th>Student Password</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for stu in students %}
+        <tr>
+          <td>{{ stu.id }}</td>
+          <td>{{ stu.name }}</td>
+          <td>{{ stu.email }}</td>
+          <td>{{ stu.age }}</td>
+          <td>{{ stu.password }}</td>
+          <td>
+            <a href = "{% url 'detail_student' stu.id %}" class="btn btn-success">View</a>
+            <a href = "{% url 'delete_student' stu.id %}" class="btn btn-danger">Delete</a>
+            <a href = "{% url 'update_student' stu.id %}" class="btn btn-primary">Update</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
