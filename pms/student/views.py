@@ -12,7 +12,26 @@ class StudentCreateView(CreateView):
     form_class = StudentForm
     template_name = "student/student_form.html"
     success_url = "/student/list/"
-
+    
+    def form_valid(self, form):
+        #print("age...",form.cleaned_data['age'])
+        # if form.cleaned_data['age']<18:
+        #     print("invalid age......")
+        #     form.add_error('age', 'Age must be greater than 18')
+        #     return self.form_invalid(form)
+        # if form.cleaned_data['marks']<35:
+        #     print("invalid marks......")
+        #     form.add_error('marks', 'Marks must be greater than 35')
+        #     return self.form_invalid(form)
+        
+        if form.cleaned_data['age']<18 or form.cleaned_data['marks']<35:
+            print("invalid age or marks......")
+            form.add_error(None, 'Age must be greater than 18 and Marks must be greater than 35')
+            return self.form_invalid(form)
+        
+        
+        return super().form_valid(form)
+    
 
 class StudentListView(ListView):
     model = Student # SELECT * FROM student_student
