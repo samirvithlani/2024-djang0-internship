@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     "product",
     "crispy_forms",
     "crispy_bootstrap4",
-    "student"
+    "student",
+    "user"
 ]
 
 MIDDLEWARE = [
@@ -122,6 +123,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+AUTH_USER_MODEL = "user.User"
 
 
 # Static files (CSS, JavaScript, Images)
