@@ -119,4 +119,45 @@ regiter app urls.py to project urls.py
 
 
 
+logout redicrec to login...
+
+login required
+redirect login
+
+
+project ---->
+app --->
+project managment,time tracking,bug tracking ---> user,project
+expense manager --> user,expense
+local service provider --> user,service
+hr management --> user,employee
+car rental --> user,car, 
+
+---------------------------------------------
+
+dont do migrations....
+models --->
+
+user app --> user
+project app -- model --> project
+
+models -->friday --->
+tuesday : -->template integration --> base.html --> navbar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

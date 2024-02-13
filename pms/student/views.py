@@ -4,6 +4,8 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from .models import Student
 from .forms import StudentForm
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 
 # Create your views here.
@@ -32,7 +34,8 @@ class StudentCreateView(CreateView):
         
         return super().form_valid(form)
     
-
+#method decorator
+@method_decorator(login_required, name='dispatch')
 class StudentListView(ListView):
     model = Student # SELECT * FROM student_student
     context_object_name = "students"
